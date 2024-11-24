@@ -22,4 +22,4 @@ jobs:
       with:
         node-version: 22
     - name: Run index.js
-      run: node run index.js
+      run: node index.js
