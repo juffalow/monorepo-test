@@ -1,0 +1,25 @@
+name: Service 2
+
+on:
+  push:
+    paths:
+      - 'service-2/**'
+      - 'common/**'
+
+defaults:
+  run:
+    working-directory: ./service-2
+
+jobs:
+  run-code:
+    name: Run code
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+    - name: Run index.js
+      run: node run index.js
